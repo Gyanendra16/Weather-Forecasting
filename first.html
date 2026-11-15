@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+    <script src="script.js" defer ></script>
+
+</head>
+<body>
+    <main class="main" >
+        <header class="input-type" >
+        <input class="city-input" placeholder="Search city" >
+        <button class="Search">
+            <span class="material-symbols-outlined">
+             search
+            </span>
+
+        </button>
+        </header>
+        <section class="weather-info"  style="display: none;" >
+            <div class="location_date">
+                <div class="location">
+                    <span class="material-symbols-outlined">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M536.5-503.5Q560-527 560-560t-23.5-56.5Q513-640 480-640t-56.5 23.5Q400-593 400-560t23.5 56.5Q447-480 480-480t56.5-23.5ZM480-186q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/></svg>
+                    </span>
+                    <h4 class="country-text">India</h4>
+
+                </div>
+                <h5 class="current-date reg-txt">Tuesday, 06 ,March</h5>
+            </div>
+            <div class="weather-summary">
+                <img src="pblphoto/clouds.svg" class="weather-summary-image">
+                <div class="weather-summary-innfo">
+                    <h1 class="temp">29 °C</h1>
+                    <h3 class="condition reg-txt">cloud</h3>
+                </div>
+            </div>
+            <!-- Weather Alert Banner -->
+            <div class="weather-alert" style="display:none;">
+                <svg xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960" width="18px" fill="#ffcc00"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Z"/></svg>
+                <span class="alert-text">Weather alert</span>
+            </div>
+
+            <div class="weather-condition">
+                <div class="condition-item">
+                    <span class="material-symbols-outlined">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M80-240v-80q38 0 56.5-20t77.5-20q59 0 77.5 20t54.5 20q38 0 56.5-20t77.5-20q57 0 77.5 20t56.5 20q38 0 55.5-20t76.5-20q59 0 77.5 20t56.5 20v80q-57 0-77.5-20T746-280q-36 0-54.5 20T614-240q-57 0-77.5-20T480-280q-38 0-56.5 20T346-240q-59 0-76.5-20T214-280q-38 0-56.5 20T80-240Zm0-160v-80q38 0 56.5-20t77.5-20q57 0 76.5 20t55.5 20q38 0 56.5-20t77.5-20q57 0 77 20t55 20q38 0 56.5-20t77.5-20q57 0 77.5 20t56.5 20v80q-59 0-78.5-20T746-440q-36 0-54.5 20T614-400q-57 0-77.5-20T480-440q-38 0-55.5 20T348-400q-59 0-78.5-20T214-440q-36 0-56.5 20T80-400Zm0-160v-80q38 0 56.5-20t77.5-20q57 0 76.5 20t55.5 20q38 0 56.5-20t77.5-20q57 0 77 20t55 20q38 0 56.5-20t77.5-20q57 0 77.5 20t56.5 20v80q-59 0-78.5-20T746-600q-36 0-54.5 20T614-560q-57 0-77.5-20T480-600q-38 0-55.5 20T348-560q-59 0-78.5-20T214-600q-36 0-56.5 20T80-560Z"/></svg>
+                    </span>
+                    <div class="condition-info">
+                        <h5 class="reg-txt">humidity</h5>
+                        <h5 class="humidity-value">55%</h5>
+                    </div>
+
+                </div>
+                 <div class="condition-item">
+                    <span class="material-symbols-outlined">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M460-160q-50 0-85-35t-35-85h80q0 17 11.5 28.5T460-240q17 0 28.5-11.5T500-280q0-17-11.5-28.5T460-320H80v-80h380q50 0 85 35t35 85q0 50-35 85t-85 35ZM80-560v-80h540q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43h-80q0-59 40.5-99.5T620-840q59 0 99.5 40.5T760-700q0 59-40.5 99.5T620-560H80Zm660 320v-80q26 0 43-17t17-43q0-26-17-43t-43-17H80v-80h660q59 0 99.5 40.5T880-380q0 59-40.5 99.5T740-240Z"/></svg>
+                    </span>
+                    <div class="condition-info">
+                        <h5 class="reg-txt">Wind Speed</h5>
+                        <h5 class="Wind-value">2M/s</h5>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sunrise & Sunset -->
+            <div class="sun-times">
+                <div class="sun-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#FFD700"><path d="M480-720q-17 0-28.5-11.5T440-760v-80q0-17 11.5-28.5T480-880q17 0 28.5 11.5T520-840v80q0 17-11.5 28.5T480-720Zm0 560q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240ZM200-420H120q-17 0-28.5-11.5T80-460q0-17 11.5-28.5T120-500h80q17 0 28.5 11.5T240-460q0 17-11.5 28.5T200-420Zm640 0h-80q-17 0-28.5-11.5T720-460q0-17 11.5-28.5T760-500h80q17 0 28.5 11.5T880-460q0 17-11.5 28.5T840-420ZM226-618l-56-56q-12-12-11.5-28.5T170-730q12-12 28.5-12t28.5 12l56 56q11 11 11 28t-11 28q-11 12-28 11.5T226-618Zm508 508-56-56q-11-11-11-28t11-28q11-12 27.5-11.5T734-222l56 56q12 12 11.5 28.5T790-110q-12 12-28.5 12T734-110ZM734-618q-12-11-11.5-27.5T734-674l56-56q12-12 28.5-12t28.5 12q12 12 11.5 28.5T846-674l-56 56q-11 11-28 11t-28-11ZM226-110q-12-12-11.5-28.5T226-166l56-56q11-11 28-11t28 11q12 11 11.5 27.5T338-166l-56 56q-12 12-28.5 12T226-110ZM480-400Z"/></svg>
+                    <div class="sun-info">
+                        <h5 class="reg-txt">Sunrise</h5>
+                        <h5 class="sunrise-value">--:--</h5>
+                    </div>
+                </div>
+                <div class="sun-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="22px" viewBox="0 -960 960 960" width="22px" fill="#FF8C42"><path d="M480-280q-17 0-28.5 11.5T440-240v80q0 17 11.5 28.5T480-120q17 0 28.5-11.5T520-160v-80q0-17-11.5-28.5T480-280Zm0-400q-100 0-170 70t-70 170q0 100 70 170t170 70q100 0 170-70t70-170q0-100-70-170t-170-70Zm0 80q67 0 113.5 46.5T640-440q0 67-46.5 113.5T480-280q-67 0-113.5-46.5T320-440q0-67 46.5-113.5T480-600ZM80-460q0-17 11.5-28.5T120-500h80q17 0 28.5 11.5T240-460q0 17-11.5 28.5T200-420H120q-17 0-28.5-11.5T80-460Zm640 0q0-17 11.5-28.5T760-500h80q17 0 28.5 11.5T880-460q0 17-11.5 28.5T840-420h-80q-17 0-28.5-11.5T720-460ZM226-338l-56 56q-12 12-11.5 28.5T170-226q12 12 28.5 12t28.5-12l56-56q11-11 11-28t-11-28q-11-12-28-11.5T226-338Zm508-508 56 56q12 12 11.5 28.5T790-734q-12 12-28.5 12T734-734l-56-56q-11-11-11-28t11-28q11-12 27.5-11.5T734-846ZM734-338q-12 11-11.5 27.5T734-282l56 56q12 12 28.5 12t28.5-12q12-12 11.5-28.5T846-282l-56-56q-11-11-28-11t-28 11ZM226-846q-12 12-11.5 28.5T226-790l56 56q11 11 28 11t28-11q12-11 11.5-27.5T338-790l-56-56q-12-12-28.5-12T226-846ZM480-440Z"/></svg>
+                    <div class="sun-info">
+                        <h5 class="reg-txt">Sunset</h5>
+                        <h5 class="sunset-value">--:--</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="forecast-itemcontainer">
+                <div class="forecat-item">
+                    <h5 class="forecast-date reg-txt">06 March</h5>
+                    <img src="pblphoto/thunderstorm.svg" class="forecat-item-img">
+                    <h5 class="forecast=temp">29 °C</h5>
+                </div>
+                <div class="forecat-item">
+                    <h5 class="forecast-date reg-txt">06 March</h5>
+                    <img src="pblphoto/thunderstorm.svg" class="forecat-item-img">
+                    <h5 class="forecast=temp">29 °C</h5>
+                </div>
+                <div class="forecat-item">
+                    <h5 class="forecast-date reg-txt">06 March</h5>
+                    <img src="pblphoto/thunderstorm.svg" class="forecat-item-img">
+                    <h5 class="forecast=temp">29 °C</h5>
+                </div>
+                <div class="forecat-item">
+                    <h5 class="forecast-date reg-txt">06 March</h5>
+                    <img src="pblphoto/thunderstorm.svg" class="forecat-item-img">
+                    <h5 class="forecast=temp">29 °C</h5>
+                </div>
+            </div>
+        </section>
+        <section class="search-city section-message" >
+            <div>
+                <h1>search-city</h1>
+                <img  src="pblphoto/search-city.png" >
+                <h4 class="regular-text">
+                    Find the weather condition of the city
+                </h4>
+            </div>
+        </section>
+        <section class="not-found section-message " style="display: none;">
+            <div>
+                <h1>search-city</h1>
+                <img  src="pblphoto/not-found.png" >
+                <h4 class="regular-text">
+                    Find the weather condition of the city
+                </h4>
+            </div>
+        </section>
+    </main>
+</body>
+</html>    
